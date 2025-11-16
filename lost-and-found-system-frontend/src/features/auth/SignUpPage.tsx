@@ -33,16 +33,25 @@ return (
 <div className="max-w-md mx-auto mt-12 bg-white p-6 rounded shadow">
     <h2 className="text-xl font-semibload mb-4"> Sign Up </h2>
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+
         <div>
             <label className="block text-sm">Username</label>
             <input {...register('username')} className="w-full p-2  border rounded" />
             <p className="text-sm text-red-600">{errors.password?.message as string}</p>
         </div>
+
+        <div>
+            <label className="block text-sm">Password</label>
+            <input type="password" {...register('password')} className="w-full p-2 border rounded" />
+            <p className="text-sm text-red-600">{errors.password?.message as string}</p>
+        </div>
+
         <div>
             <label className="block text-sm">Confirm Password</label>
             <input type="password" {...register('confirm')} className="w-full p-2 border rounded" />
             <p className="text-sm text-red-600">{errors.confirm?.message as string}</p>
         </div>
+
         <div>
             <button type="submit" disabled={isSubmitting} className="w-full p-2 bg-green-600 text-white">Sign Up</button>
         </div>
