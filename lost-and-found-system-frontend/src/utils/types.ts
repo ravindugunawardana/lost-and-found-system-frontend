@@ -1,15 +1,14 @@
 export type Role = 'user' | 'admin'
 
 export type User = {
-    // id: string
-    // fullName: string
+    id: string
+    fullName: string
     username: string
-    roles: Role[]
-    // password: string
-    // contactNumber: string
-    // roles: string;
-    // isActive: boolean
-    // createdAt: LocalDateTime
+    password: string
+    contactNumber: string
+    role: Role[]
+    isActive: boolean;
+    createdAt: LocalDateTime;
 }
 
 export type Item = {
