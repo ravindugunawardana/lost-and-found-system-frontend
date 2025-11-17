@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { loginApi } from "../../api/authService";
 import { useAuth } from "../../auth/AuthContext";
 
-type FormValues = { username: string; password: string; }
+type FormValues = {username: string, password: string}
 
 const schema = yup.object({
     username: yup.string().required('Username is required'),
@@ -34,14 +34,23 @@ export default function SignInPage(){
         <div className="max-w-md mx-auto mt-12 bg-white p-6 rounded shadow">
             <h2 className="text-xl font-semibold mb-4"> SignIn </h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+
                 <div>
                     <label className="block text-sm"> Username </label>
                     <input {...register('username')} className="w-full p-2 border rounded" />
+                    <p className="text-sm text-red-600"> {errors.username?.message as string} </p>
+                </div>
+
+                <div>
+                    <label className="block text-sm"> Password </label>
+                    <input {...register('password')} className="w-full p-2 border rounded" />
                     <p className="text-sm text-red-600"> {errors.password?.message as string} </p>
                 </div>
+
                 <div>
                     <button type="submit"  disabled={isSubmitting} className="w-full p-2 bg-blue-600 text-white rounded"> SignIn </button>
                 </div>
+
             </form>
             <p className="mt-4 text-sm"> Don't have an account? <a href="/signup" className="text-blue-600"> SignUp </a></p>
         </div>
