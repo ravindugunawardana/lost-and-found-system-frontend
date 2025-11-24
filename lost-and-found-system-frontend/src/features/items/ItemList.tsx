@@ -40,8 +40,8 @@ export default function ItemList(){
                             <h3 className="font-semibold">{it.itemName}</h3>
                             <p className="text-sm">{it.description}</p>
                             <div className="mt-2 flex gap-2">
-                                <Link to={'/items/${it.id}'} className="text-sm px-2 py-1 border rounded">View</Link>
-                                <Link to={'/edit/${it.id'} className="text-sm px-2 py-1 border rounded">Edit</Link>
+                                <Link to={`/items/${it.id}`} className="text-sm px-2 py-1 border rounded">View</Link>
+                                <Link to={`/edit/${it.id}`} className="text-sm px-2 py-1 border rounded">Edit</Link>
                                 <button onClick={() => handleDelete(it.id)} className="text-sm px-2 py-1 border rounded">Delete</button>
                             </div>
                         </div>

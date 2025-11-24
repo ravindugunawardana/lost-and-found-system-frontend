@@ -43,7 +43,7 @@ export default function SignInPage(){
 
                 <div>
                     <label className="block text-sm"> Password </label>
-                    <input {...register('password')} className="w-full p-2 border rounded" />
+                    <input type="password" {...register('password')} className="w-full p-2 border rounded" />
                     <p className="text-sm text-red-600"> {errors.password?.message as string} </p>
                 </div>
 
